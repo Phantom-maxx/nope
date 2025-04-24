@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Voice Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <button class="menu" onclick="toggleMenu()">☰</button>
+  <div id="menuPanel" class="menu-panel">
+    <button onclick="toggleDarkMode()">🌓 Theme</button>
+    <button onclick="toggleHistory()">🧾 History</button>
+  </div>
+  <div class="calculator">
+    <div id="result" class="result">Result: </div>
+    <input type="text" id="input" aria-label="Calculation input" placeholder="Enter your calculation" />
+    <div class="buttons">
+      <button onclick="append('7')">7</button><button onclick="append('8')">8</button><button onclick="append('9')">9</button><button onclick="append('/')">/</button>
+      <button onclick="append('4')">4</button><button onclick="append('5')">5</button><button onclick="append('6')">6</button><button onclick="append('*')">×</button>
+      <button onclick="append('1')">1</button><button onclick="append('2')">2</button><button onclick="append('3')">3</button><button onclick="append('-')">-</button>
+      <button onclick="append('0')">0</button><button onclick="append('.')">.</button><button onclick="calculate()">=</button><button onclick="append('+')">+</button>
+      <button onclick="append('(')">(</button><button onclick="append(')')">)</button><button onclick="append('%')">%</button><button onclick="append('Math.sqrt(')">√</button>
+      <button onclick="append('**')">^</button><button onclick="append('Math.PI')">π</button><button onclick="append('Math.E')">e</button><button onclick="backspace()">⌫</button>
+    </div>
+    <div class="controls">
+      <button onclick="clearInput()" style="background-color:#dc3545;">Clear</button>
+      <button onclick="startVoiceInput()">🎤 Speak</button>
+    </div>
+    <div id="historyArea">
+      <h4>History:</h4>
+      <ul id="historyList"></ul>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

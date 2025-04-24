@@ -1,0 +1,34 @@
+:root {
+  --primary-color: #6c63ff;
+  --secondary-color: #333;
+  --background-color: #f4f4f9;
+  --button-hover: #5a54e4;
+  --dark-bg: #1e1e1e;
+  --dark-text: #f1f1f1;
+  --dark-button: #3b3b3b;
+  --dark-hover: #575757;
+}
+* { box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--background-color);
+  color: var(--secondary-color);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+body.dark { background-color: var(--dark-bg); color: var(--dark-text); }
+.menu { position: absolute; top: 20px; right: 20px; background: var(--primary-color); color: white; border: none; padding: 10px; border-radius: 8px; cursor: pointer; }
+.menu-panel { display: none; position: absolute; top: 60px; right: 20px; background: #fff; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); padding: 10px; min-width: 150px; z-index: 100; }
+.menu-panel.active { display: block; }
+body.dark .menu-panel { background: var(--dark-button); color: var(--dark-text); }
+.calculator { max-width: 400px; margin: 0 auto; background: #fff; padding: 20px; border-radius: 15px; box-shadow: 0 6px 20px rgba(0,0,0,0.1); transition: background 0.3s ease; }
+body.dark .calculator { background: var(--dark-button); }
+.result { font-size: 24px; margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 8px; background: #f9f9f9; min-height: 30px; transition: background 0.3s ease; }
+body.dark .result { background: var(--dark-hover); border-color: var(--dark-hover); }
+.buttons { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 10px; }
+button { font-size: 20px; padding: 15px; border: none; border-radius: 8px; background-color: var(--primary-color); color: white; cursor: pointer; transition: all 0.3s ease; }
+button:hover, button:focus { background-color: var(--button-hover); outline: none; }
+.controls { display: flex; justify-content: center; gap: 10px; margin-top: 10px; }
+#historyArea { display: none; text-align: left; margin-top: 20px; }
+#historyArea.active { display: block; }
